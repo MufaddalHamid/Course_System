@@ -1,8 +1,11 @@
-from Datamodel import AuthControl
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy import create_engine, text, select
+
+from Datamodel.BaseDM import Base
+from DataModel import AuthControl
 
 from flask import request
-from sqlalchemy import text, select
-
+# endRegion
 
 def delete_old_auth_Tokens(session):
     # PostgreSQL or MYSQL uses CURRENT_TIMESTAMP or NOW()
@@ -27,6 +30,11 @@ def checkRole(session):
         # session.query(AuthControl).all()
     
 
-    else:
-        return False
-    
+class ActiveSession:
+    engine = create_engine('put your connection string!!')
+    #this is my connection key put yours 'mssql+pyodbc://' + 'LAPTOP-LC07V53A/CourseSys?' + 'driver=SQL+Server+Native+Client+11.0'
+    Session = sessionmaker(bind=engine)
+    Session = Session()
+    Base.metadata.create_all(engine)
+
+
