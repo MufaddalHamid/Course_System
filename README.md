@@ -48,6 +48,12 @@ Example:
 2. Integrating Google Maps
 
 
+To run the virtual enviroment use the following command
+```cmd
+    python -m venv venv
+```
+* .\venv\Scripts\activate
+* source venv/bin/activate
 
 Contributors
 * [Sourav Kumar](https://github.com/MufaddalHamid)
