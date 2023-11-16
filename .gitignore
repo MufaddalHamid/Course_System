@@ -1,7 +1,3 @@
-# Default ignored files
-/shelf/
-/workspace.xml
-
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.pyc
@@ -39,4 +35,3 @@ instance/
 # Database
 db.sqlite
 db.sqlite3
-
