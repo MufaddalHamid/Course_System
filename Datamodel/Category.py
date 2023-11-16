@@ -3,4 +3,4 @@ from Datamodel.BaseDM import BaseDM
 class Category(BaseDM):
     tablename = 'Category'
     Category_Name = Column(String(100), nullable=False, unique=True)
-    Subject_IDs = list( Column ( String (50) , nullable=False)) #multivalued attribute
+    #Subject_IDs = list( Column ( String (50) , nullable=False)) #multivalued attribute

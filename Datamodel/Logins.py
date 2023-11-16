@@ -10,4 +10,4 @@ class Login_ID(BaseDM):
     tablename = 'Logins'
     User_Name = Column(String(100), nullable=False)
     Password = Column(String(50), nullable=False)
-    UserType = Column( Enum ( UserType , native_enum = False , nullable = False ))
+    UserType = Column(Enum( UserType , native_enum = False , nullable = False ))
