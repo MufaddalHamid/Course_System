@@ -10,7 +10,7 @@ app = Flask(__name__, template_folder='Views', static_url_path='/static/')
 @app.route("/")
 def home():
     if 'Login' == 'Student':
-    return render_template('Forms/index.html')
+     return render_template('Forms/index.html')
 # endregion
 
 # region Login
