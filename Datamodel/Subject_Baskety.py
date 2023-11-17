@@ -4,7 +4,7 @@ from Datamodel.Category import Category
 from Datamodel.Subject import Subject
 from sqlalchemy.orm import relationship , backref
 class Subject_Basket(BaseDM):
-    tablename = 'Subject_Basket'
+    __tablename__ = 'Subject_Basket'
     Category_ID = Column(String(36),ForeignKey(Category.SysId),nullable=False)
     Subject_ID = Column(String(36), ForeignKey(Subject.SysId), nullable=False)
     Subject = relationship(Subject,backref=backref("Subject_Basket"))

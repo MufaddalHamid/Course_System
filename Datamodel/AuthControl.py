@@ -1,7 +1,6 @@
-from sqlalchemy import Column, Integer, String, Float, Date
-
-from DataModel.BaseDM import BaseDM
-
+from datetime import datetime, timedelta
+from sqlalchemy import Column, Integer, String, Float, Date, DateTime
+from Datamodel.BaseDM import BaseDM
 
 
 class AuthControl(BaseDM):

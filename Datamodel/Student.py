@@ -3,7 +3,7 @@ from Datamodel.BaseDM import BaseDM
 from Datamodel.Course import Course
 from sqlalchemy.orm import relationship , backref
 class Student(BaseDM):
-    tablename = 'Student'
+    __tablename__ = 'Student'
     User_Name = Column(String(100), nullable=False, unique=True)
     Password = Column(String(50), nullable=False)
     Email = Column(String(50), nullable=False, unique=True)

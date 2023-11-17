@@ -4,7 +4,7 @@ from Datamodel.Teacher import Teacher
 from Datamodel.Category import Category
 from sqlalchemy.orm import relationship , backref
 class Subject(BaseDM):
-    tablename = 'Subjects'
+    __tablename__ = 'Subjects'
     Subject_Name = Column(String(100), nullable=False, unique=True)
     Teacher_ID= Column(String(36),ForeignKey(Teacher.SysId),nullable=True)
     PreRequisite_subject_id = Column(String(36), ForeignKey('Subjects.SysId'), nullable=True)
