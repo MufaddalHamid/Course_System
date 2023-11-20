@@ -1,13 +1,16 @@
-from sqlalchemy import Column, BigInteger, String
+from sqlalchemy import Column, String, Enum
 from Datamodel.BaseDM import BaseDM
-from enum import Enum
-class UserType(Enum):
+from enum import Enum as PythonEnum
+
+class UserType(PythonEnum):
     ADMIN = 0
     TEACHER = 1
     STUDENT = 2
 
 class Login_ID(BaseDM):
-    tablename = 'Logins'
+    __tablename__ = 'Logins'
     User_Name = Column(String(100), nullable=False)
     Password = Column(String(50), nullable=False)
-    UserType = Column(Enum( UserType , native_enum = False , nullable = False ))
+    UserType = Column(Enum(UserType), nullable=False)  # Use Enum from enum module
+
+# Rest of your code

@@ -6,7 +6,7 @@ from Datamodel.Category import Category
 from Datamodel.Subject import Subject
 
 class Student_Selection(BaseDM):
-    tablename = 'Student_Selection'
+    __tablename__ = 'Student_Selection'
     Student_ID= Column(String(36),ForeignKey(Student.SysId),nullable=False)#Foreign Key
     Category_ID = Column(String(36),ForeignKey(Category.SysId),nullable=False)
     Subject_ID = Column(String(36),ForeignKey(Subject.SysId),nullable=False)

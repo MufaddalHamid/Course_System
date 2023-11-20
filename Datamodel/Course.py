@@ -1,7 +1,7 @@
 from sqlalchemy import Column, BigInteger, String,Integer
 from Datamodel.BaseDM import BaseDM
 class Course(BaseDM):
-    tablename = 'Course'
+    __tablename__ = 'Course'
     Course_Name = Column(String(100), nullable=False, unique=True)
     #Course_ID = Column(String(50), nullable=False)
     Duration = Column(Integer, nullable=False)
