@@ -1,8 +1,9 @@
 import uuid
 from datetime import date
-from sqlalchemy import or_,and_
-from Datamodel.Teacher import Teacher 
+from sqlalchemy import or_, and_
+from Datamodel.Teacher import Teacher
 from Logic.AppHelper import ActiveSession
+
 
 class TeacherBC:
     def __init__(self, SysId=None):
@@ -13,17 +14,18 @@ class TeacherBC:
         try:
             if self.SysId is not None:
                 print('SysID is not null')
-                self.teacher = ActiveSession.Session.query(Teacher).filter_by(SysId=self.SysId).first()
+                self.teacher = ActiveSession.Session.query(
+                    Teacher).filter_by(SysId=self.SysId).first()
             else:
                 print('SysId not provided, initialized emptyTeacher')
-                self.teacher =Teacher()
+                self.teacher = Teacher()
         except Exception as e:
             print(f"Error loadingTeacher data: {str(e)}")
             self.teacher = None
 
     def create_teacher(self, new_teacher):
         try:
-            self.teacher =Teacher(**new_teacher)
+            self.teacher = Teacher(**new_teacher)
             teacher_exists = (
                 ActiveSession.Session.query(Teacher)
                 .filter(
@@ -35,7 +37,8 @@ class TeacherBC:
                 .first()
             )
             if teacher_exists:
-                raise ValueError(f'Teacher already existed | User already Created {teacher_exists.User_Name}!!')
+                raise ValueError(
+                    f'Teacher already existed | User already Created {teacher_exists.User_Name}!!')
             else:
                 self.teacher.SysId = str(uuid.uuid4())
                 ActiveSession.Session.add(self.teacher)
@@ -52,7 +55,6 @@ class TeacherBC:
 
     def get_teachers(self):
         try:
-            print('called here T')
             if self.SysId is None:
                 results = ActiveSession.Session.query(Teacher).all()
                 return results
@@ -83,7 +85,8 @@ class TeacherBC:
             if not ActiveSession.Session.object_session(self.teacher):
                 print('went in function')
                 # If it's not associated, query it from the database and add it to the session
-                self.teacher = ActiveSession.Session.query(Teacher).get(self.teacher.id)
+                self.teacher = ActiveSession.Session.query(
+                    Teacher).get(self.teacher.id)
 
             # Now you should be able to delete it
             ActiveSession.Session.delete(self.teacher)
@@ -92,4 +95,3 @@ class TeacherBC:
         except Exception as e:
             ActiveSession.Session.rollback()
             return {"message": str(e), "Code": 500}
-
