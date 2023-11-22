@@ -7,7 +7,7 @@ class UserType(PythonEnum):
     TEACHER = 1
     STUDENT = 2
 
-class Login_ID(BaseDM):
+class Login(BaseDM):
     __tablename__ = 'Logins'
     User_Name = Column(String(100), nullable=False)
     Password = Column(String(50), nullable=False)
