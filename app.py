@@ -1,9 +1,10 @@
 import uuid
-<<<<<<< HEAD
-=======
+
 import requests
 from Logic.TeacherBC import TeacherBC
->>>>>>> 7fbb8c8e6d9dccb5d6d614381b11a128020395d4
+from Logic.CourseBC import CourseBC
+from Logic.CategoryBC import CategoryBC
+#7fbb8c8e6d9dccb5d6d614381b11a128020395d4
 from flask import Flask, jsonify, render_template, request
 import os
 from Logic.AppHelper import ActiveSession
@@ -17,7 +18,7 @@ def home():
 # endregion
 
 # region Login
-@app.route("/login", methods=['GET', 'POST'])
+@app.route("/Login", methods=['GET', 'POST'])
 def Login():
     if (request.method == "POST"):
         email = request.form.get("email")
@@ -51,7 +52,7 @@ def EditTeacher():
 
 @app.route('/SubmitTeacher', methods=['POST'])
 def SubmitTeacher():
-    if requests.method == 'POST':
+    if request.method == 'POST':
         if request.form.get('SysId') == 'None':
             teacher_bc = TeacherBC()
             return jsonify(teacher_bc.create_teacher(new_teacher=dict(request.form)))
@@ -64,7 +65,7 @@ def SubmitTeacher():
 def DeleteTeacher():
     SysId = request.args.get('SysId')
     teacher = TeacherBC(SysId=SysId)
-    return render_template('Forms/Teacher.html', teacher=teacher.get_teacher() , status = 'Delete')
+    return render_template('Forms/Teacher.html', teacher=teacher.get_teachers() , status = 'Delete')
 
 @app.route('/Delete', methods=['POST'])
 def Delete():
@@ -74,6 +75,90 @@ def Delete():
         else:
             teacher_bc = TeacherBC(SysId=request.form.get('SysId'))
             return jsonify(teacher_bc.delete_teacher())
+#endregion
+
+#region Course CRUD
+@app.route("/Course")
+def CourseLising():
+    #print(TeacherBC.get_books(self=None))
+    return render_template('Listings/Course.html', courses = CourseBC(SysId=None).get_courses())
+@app.route('/Course/Create')
+def CreateCourse():
+    # Add your logic for creating a book here
+    return render_template('Forms/Course.html', course = CourseBC(None) , status = 'Create')
+@app.route('/Course/Edit')
+def EditCourse():
+    SysId = request.args.get('SysId')
+    course = CourseBC(SysId=SysId)
+    return render_template('Forms/Course.html', course = course.get_courses() , status = 'Edit')
+
+@app.route('/SubmitCourse', methods=['POST'])
+def SubmitCourse():
+    if request.method == 'POST':
+        if request.form.get('SysId') == 'None':
+            course_bc = CourseBC()
+            return jsonify(course_bc.create_Course(new_course=dict(request.form)))
+        else:
+            #print('Updating Valuesss',request.form.get('SysId'))
+            course_bc = CourseBC(SysId=request.form.get('SysId'))
+            return jsonify(course_bc.update_Course(new_data=dict(request.form)))
+
+@app.route('/Course/Delete')
+def DeleteCourse():
+    SysId = request.args.get('SysId')
+    course = CourseBC(SysId=SysId)
+    return render_template('Forms/Course.html', course=course.get_courses() , status = 'Delete')
+
+@app.route('/DeleteC', methods=['POST'])
+def DeleteC():
+    if request.method == 'POST':
+        if request.form.get('SysId') == 'None':
+            return jsonify({"error":"No Course To Delete"},500)
+        else:
+            course_bc = CourseBC(SysId=request.form.get('SysId'))
+            return jsonify(course_bc.delete_Course())
+#endregion
+
+#region Category CRUD
+@app.route("/Categories")
+def CategoryLising():
+    #print(TeacherBC.get_books(self=None))
+    return render_template('Listings/Category.html', categories = CategoryBC(SysId=None).get_categories())
+@app.route('/Category/Create')
+def CreateCategory():
+    # Add your logic for creating a book here
+    return render_template('Forms/Category.html', category = CategoryBC(None) , status = 'Create')
+@app.route('/Category/Edit')
+def EditCategory():
+    SysId = request.args.get('SysId')
+    ctegory = CategoryBC(SysId=SysId)
+    return render_template('Forms/Category.html', category = ctegory.get_categories() , status = 'Edit')
+
+@app.route('/SubmitCategory', methods=['POST'])
+def SubmitCategory():
+    if request.method == 'POST':
+        if request.form.get('SysId') == 'None':
+            course_bc = CategoryBC()
+            return jsonify(course_bc.create_Category(new_category=dict(request.form)))
+        else:
+            #print('Updating Valuesss',request.form.get('SysId'))
+            course_bc = CategoryBC(SysId=request.form.get('SysId'))
+            return jsonify(course_bc.update_Category(new_data=dict(request.form)))
+
+@app.route('/Category/Delete')
+def DeleteCategory():
+    SysId = request.args.get('SysId')
+    course = CategoryBC(SysId=SysId)
+    return render_template('Forms/Category.html', category=course.get_categories() , status = 'Delete')
+
+@app.route('/DeleteCa', methods=['POST'])
+def DeleteCa():
+    if request.method == 'POST':
+        if request.form.get('SysId') == 'None':
+            return jsonify({"error":"No Course To Delete"},500)
+        else:
+            course_bc = CategoryBC(SysId=request.form.get('SysId'))
+            return jsonify(course_bc.delete_Category())
 #endregion
 
 if __name__ == "__main__":

@@ -1,9 +1,7 @@
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine, text, select
-
 from Datamodel.BaseDM import Base
 from Datamodel.AuthControl import AuthControl
-
 import secrets
 from datetime import datetime, timedelta
 from flask import request, make_response
@@ -58,9 +56,8 @@ def checkRole(request, session):
 
 
 class ActiveSession:
-    engine = create_engine('put your connection string!!')
+    engine = create_engine('mssql+pyodbc://' + 'LAPTOP-LC07V53A/CourseSys?' + 'driver=SQL+Server+Native+Client+11.0')
     # this is my connection key put yours 'mssql+pyodbc://' + 'LAPTOP-LC07V53A/CourseSys?' + 'driver=SQL+Server+Native+Client+11.0'
     Session = sessionmaker(bind=engine)
     Session = Session()
     Base.metadata.create_all(engine)
-

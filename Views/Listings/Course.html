@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Teacher</title>
+    <title>Courses</title>
         <link href="/static/Template/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 </head>
 
@@ -225,9 +225,9 @@
                 <div class="container-fluid">
                     <div class="card shadow mb-4">
                         <div class="card-header d-flex justify-content-between align-items-center">
-                            <h6 class="m-0 font-weight-bold text-primary">Teacher List</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Course List</h6>
                             <div class="d-flex">
-                                <a href="{{ url_for('CreateTeacher') }}" class="btn btn-success btn-circle" data-toggle="tooltip" data-title="Create New Teacher">
+                                <a href="{{ url_for('CreateCourse') }}" class="btn btn-success btn-circle" data-toggle="tooltip" data-title="Create New Course">
                                     <i class="fas fa-plus"></i>
                                 </a>
                             </div>
@@ -238,22 +238,22 @@
                                     <thead>
                                          <tr>
                                             <th>No</th>
-                                            <th>User Name</th>
-                                            <th>Email</th>
+                                            <th>Name</th>
+                                            <th>Duration</th>
                                             <th>Edit Or Delete</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {% for teacher in teachers %}
+                                        {% for course in courses %}
                                             <tr>
                                                 <td>{{loop.index}}</td>
-                                                <td>{{ teacher.User_Name }}</td>
-                                                <td>{{ teacher.Email }}</td>
+                                                <td>{{ course.Course_Name }}</td>
+                                                <td>{{ course.Duration }}</td>
                                                 <td>
-                                                 <a href="{{ url_for('EditTeacher', SysId=teacher.SysId) }}" class="btn btn-primary btn-sm" title="Edit">
+                                                 <a href="{{ url_for('EditCourse', SysId=course.SysId) }}" class="btn btn-primary btn-sm" title="Edit">
                                                       <i class="fas fa-edit"></i>
                                                  </a>
-                                                 <a href="{{ url_for('DeleteTeacher', SysId=teacher.SysId) }}" class="btn btn-danger btn-sm" title="Delete">
+                                                 <a href="{{ url_for('DeleteCourse', SysId=course.SysId) }}" class="btn btn-danger btn-sm" title="Delete">
                                                      <i class="fas fa-trash"></i>
                                                  </a>
                                                 </td>
@@ -266,6 +266,7 @@
                         </div>
                     </div>
                 </div>
+
                 <!-- /.container-fluid -->
 
             </div>
