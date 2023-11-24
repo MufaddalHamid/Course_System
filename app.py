@@ -21,6 +21,10 @@ app = Flask(__name__, template_folder='Views', static_url_path='/static/')
 
 # region Index
 
+@app.context_processor
+def inject_role_type():
+    return dict(roleType=roleType)
+
 
 @app.route("/")
 def home():
