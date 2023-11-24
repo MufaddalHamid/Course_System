@@ -62,3 +62,10 @@ class LoginBC:
                 raise ValueError(f'User Does not Exist | User not Found')
         except Exception as e:
             return {"error": str(e)}, 500
+        
+    def get_role(self, user):
+        try:
+            user_exists = self.get_user(user)
+            return user_exists.UserType
+        except Exception as e:
+            return {"error": str(e)}, 500
