@@ -8,7 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Dashboard</title>
+
+    <title>Student Form</title>
 
 </head>
 
@@ -20,6 +21,7 @@
         <!-- Sidebar -->
         {% include "static/Header.html"%}
         <!-- End of Sidebar -->
+
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
 
@@ -35,6 +37,7 @@
                     </button>
 
                     <!-- Topbar Search -->
+
                     <form
                         class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group">
@@ -142,7 +145,7 @@
                                 </h6>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="/static/Template/img/undraw_profile_1.svg"
+                                        <img class="rounded-circle" src="img/undraw_profile_1.svg"
                                             alt="...">
                                         <div class="status-indicator bg-success"></div>
                                     </div>
@@ -154,7 +157,7 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="/static/Template/img/undraw_profile_2.svg"
+                                        <img class="rounded-circle" src="img/undraw_profile_2.svg"
                                             alt="...">
                                         <div class="status-indicator"></div>
                                     </div>
@@ -166,7 +169,7 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="/static/Template/img/undraw_profile_3.svg"
+                                        <img class="rounded-circle" src="img/undraw_profile_3.svg"
                                             alt="...">
                                         <div class="status-indicator bg-warning"></div>
                                     </div>
@@ -200,7 +203,7 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
                                 <img class="img-profile rounded-circle"
-                                    src="/static/Template/img/undraw_profile.svg">
+                                    src="img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -232,218 +235,149 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-
-                    <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">My Dashboard</h1>
-
-                    </div>
-
-                    <!-- Content Row -->
-                    <div class="row">
-
-                        <!-- Course Name -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-primary shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Course Name</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">MCA</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Course Credits Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-success shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Total Credits</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">360</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-graduation-cap fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Course Completed -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-info shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Course Completion
-                                            </div>
-                                            <div class="row no-gutters align-items-center">
-                                                <div class="col-auto">
-                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">55%</div>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="progress progress-sm mr-2">
-                                                        <div class="progress-bar bg-info" role="progressbar"
-                                                            style="width: 50%" aria-valuenow="55" aria-valuemin="0"
-                                                            aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- My Subjects Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-warning shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                                My Subjects</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">22</div>
-                                        </div>
-                                        <div class="col-auto">
-                                           <i class="fas fa-book-open fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                      <!-- Content Row -->
-                    <div class="row">
-                        <!-- Content Column -->
-                        <div class="col mb-4">
-
-                            <!-- Project Card Example -->
-                            <div class="card shadow mb-4">
+                    <div class="card shadow mb-4">
                                 <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Subjects Completion</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Student</h6>
                                 </div>
-                                <div class="card-body">
-                                    <h4 class="small font-weight-bold">Cloud Computing <span
-                                            class="float-right">20%</span></h4>
-                                    <div class="progress mb-4">
-                                        <div class="progress-bar bg-danger" role="progressbar" style="width: 20%"
-                                            aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <h4 class="small font-weight-bold">Business Mathematics <span
-                                            class="float-right">40%</span></h4>
-                                    <div class="progress mb-4">
-                                        <div class="progress-bar bg-warning" role="progressbar" style="width: 40%"
-                                            aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <h4 class="small font-weight-bold">Information Security <span
-                                            class="float-right">60%</span></h4>
-                                    <div class="progress mb-4">
-                                        <div class="progress-bar" role="progressbar" style="width: 60%"
-                                            aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <h4 class="small font-weight-bold">AI <span
-                                            class="float-right">80%</span></h4>
-                                    <div class="progress mb-4">
-                                        <div class="progress-bar bg-info" role="progressbar" style="width: 80%"
-                                            aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <h4 class="small font-weight-bold">Physics <span
-                                            class="float-right">Complete!</span></h4>
-                                    <div class="progress">
-                                        <div class="progress-bar bg-success" role="progressbar" style="width: 100%"
-                                            aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
+                        <div class="card-body" id="cardd-body">
+                            <div id="error-message" style="color: #e74a3b;"></div>
+                            <div id="success-message" style="color: green;"></div>
+                            <form method="POST" action="/SubmitStudent" id="student-form">
+                                <!-- Student ID -->
+                                <input type="hidden" name="SysId" id ="SysId" value="{{ student.SysId }}">
+                                <div class="form-group">
+                                    <label for="User_Name">User Name</label>
+                                    <input type="text" class="form-control" id="User_Name" name="User_Name" required value="{{student.User_Name}}">
                                 </div>
-                            </div>
+
+                                <div class="form-group">
+                                    <label for="Password">Password</label>
+                                    <input type="password" class="form-control" id="Password" name="Password" required value = "{{student.Password}}">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="PRN">PRN</label>
+                                    <input type="text" class="form-control" id="PRN" name="PRN" value="{{student.PRN}}">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="Email">Email</label>
+                                    <input type="email" class="form-control" id="Email" name="Email" required value="{{student.Email}}">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="Course_ID">Course</label>
+                                    <select class="form-control" id="Course_ID" name="Course_ID" required>
+                                        {% for course in courses %}
+                                            <option value="{{ course.SysId }}" {% if course.SysId == student.Course_ID %}selected{% endif %}>{{ course.Course_Name }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="year">Year</label>
+                                    <select class="form-control" id="year" name="year" required>
+                                        {% for y in range(1, 5) %}
+                                            <option value="{{ y }}" {% if y == student.Year %}selected{% endif %}>{{ y }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+
+                                <!-- Submit Button -->
+                                <button type="submit" class="btn {{ 'btn-danger' if status == 'Delete' else 'btn-primary' }}">
+                                    {{ 'Delete' if status == 'Delete' else 'Save' }}
+                                </button>
+                             </form>
+                            <div id="error-message1" style="color: #e74a3b;"></div>
+                            <div id="success-message1" style="color: green;"></div>
                         </div>
                     </div>
-
-                    <!-- Content Row -->
-                    <div class="row">
-
-                        <!-- Area Chart -->
-                        <div class="col-xl-8 col-lg-7">
-                            <div class="card shadow mb-4">
-                                <!-- Card Header - Dropdown -->
-                                <div
-                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">??? ---- ???</h6>
-                                </div>
-                                <!-- Card Body -->
-                                <div class="card-body">
-                                    <div class="chart-area">
-                                        <canvas id="myAreaChart"></canvas>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Pie Chart -->
-                        <div class="col-xl-4 col-lg-5">
-                            <div class="card shadow mb-4">
-                                <!-- Card Header - Dropdown -->
-                                <div
-                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Category Wise Completion</h6>
-                                </div>
-                                <!-- Card Body -->
-                                <div class="card-body">
-                                    <div class="chart-pie pt-4 pb-2">
-                                        <canvas id="myPieChart"></canvas>
-                                    </div>
-                                    <div class="mt-4 text-center small">
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-primary"></i> Direct
-                                        </span>
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-success"></i> Social
-                                        </span>
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-info"></i> Referral
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
                 <!-- /.container-fluid -->
 
             </div>
             <!-- End of Main Content -->
 
-            <!-- Footer -->
-            {% include "static/Footer.html" %}
-            <!-- End of Footer -->
-
         </div>
         <!-- End of Content Wrapper -->
-
     </div>
     <!-- End of Page Wrapper -->
-
-    <!-- Page level plugins -->
-    <script src="/static/Template/vendor/chart.js/Chart.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="/static/Template/js/demo/chart-area-demo.js"></script>
-    <script src="/static/Template/js/demo/chart-pie-demo.js"></script>
-
+   {% include "static/Footer.html" %}
 </body>
+  <!-- Page level plugins -->
+    <script src="/static/Template/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="/static/Template/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <!-- Include DataTables AutoFill JavaScript -->
+    <!-- Page level custom scripts -->
+    <script src="/static/Template/js/demo/datatables-demo.js"></script>
+    <script>
+    $(document).ready(function ()
+    {
+         $('form').submit(function (e)
+         {
+            e.preventDefault(); // Prevent the default form submission
+            var status = '{{status}}'
+             if (status === "Create" || status === "Edit") { CreateOrEdit(status) }
+             else { DeleteBook() }
+        });
+
+    });
+    function DeleteBook()
+    {
+    if (confirm("Are you sure you want to delete this book?"))
+      {
+        $.ajax({
+                    type: 'POST',
+                    url: '/DeleteSt',
+                    data: $('#student-form').serialize(), // Serialize form data
+                    success: function (response) {
+                        console.log (response)
+                        if (response.Code === 201) {
+                            alert(response.message);
+                             window.location.href = '/Student';
+
+                        } else {
+                            $('#error-message').text(response.message);
+                            $('#error-message1').text(response.message);
+                            $('#cardd-body').addClass('border-bottom-danger');
+                        }
+                    },
+                    error: function (xhr) {
+                        $('#error-message').text('An error occurred. Please try again later.');
+                    }
+                });
+      }
+    }
+    function CreateOrEdit(status)
+    {
+    $.ajax({
+                type: 'POST',
+                url: '/SubmitStudent',
+                data: $('#student-form').serialize(), // Serialize form data
+                success: function (response) {
+                    console.log (response)
+                    if (response.Code === 201) {
+                        $('#success-message').text(response.message);
+                        $('#success-message1').text(response.message);
+                        $('#cardd-body').addClass('border-bottom-success');
+                        if (status == 'Create')
+                        { location.reload() }
+                    } else {
+                        $('#error-message').text(response.message);
+                        $('#error-message1').text(response.message);
+                        $('#cardd-body').addClass('border-bottom-danger');
+                    }
+                },
+                error: function (xhr) {
+
+                    $('#error-message').text('An error occurred. Please try again later.');
+
+                }
+            });
+    }
+</script>
+
+
+
 
 </html>

@@ -1,7 +1,7 @@
 import uuid
 from datetime import date
 from sqlalchemy import or_, and_
-from DataModel.Logins import Login
+from Datamodel.Logins import Login
 from Logic.AppHelper import ActiveSession
 
 
