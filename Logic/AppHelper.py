@@ -2,6 +2,8 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine, text, select
 from Datamodel.BaseDM import Base
 from Datamodel.AuthControl import AuthControl
+from Datamodel.Subject import Subject
+from Datamodel.Student import Student
 import secrets
 from datetime import datetime, timedelta
 from flask import request, make_response
