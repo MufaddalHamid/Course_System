@@ -57,10 +57,10 @@ def checkRole(request, session):
         if (result.length > 1):
             return result.role
         else:
-            return False
+            return None
         # session.query(AuthControl).all()
     else:
-        return False
+        return None
 
 # static testing Components
 def static_login_cookie(role):
