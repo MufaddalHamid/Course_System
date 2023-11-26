@@ -35,3 +35,4 @@ instance/
 # Database
 db.sqlite
 db.sqlite3
+testdb.db

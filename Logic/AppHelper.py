@@ -81,8 +81,10 @@ def roleType():
 
 
 class ActiveSession:
+    # engine = create_engine(
+    #     'mssql+pyodbc://' + 'LAPTOP-LC07V53A/CourseSys?' + 'driver=SQL+Server+Native+Client+11.0')
     engine = create_engine(
-        'mssql+pyodbc://' + 'LAPTOP-LC07V53A/CourseSys?' + 'driver=SQL+Server+Native+Client+11.0')
+        'sqlite:///testdb.db')
     # this is my connection key put yours 'mssql+pyodbc://' + 'LAPTOP-LC07V53A/CourseSys?' + 'driver=SQL+Server+Native+Client+11.0'
     Session = sessionmaker(bind=engine)
     Session = Session()
