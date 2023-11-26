@@ -29,7 +29,8 @@ def inject_role_type():
 
 @app.route("/")
 def home():
-    return render_template('Forms/index.html')
+    # return render_template('Forms/index.html')
+    return redirect(url_for("Login"))
 # endregion
 
 # region Login
@@ -54,8 +55,9 @@ def Login():
         response.set_cookie('auth_token', role, expires=datetime.utcnow(
         ) + timedelta(days=2), secure=True, httponly=True, samesite='Strict')
         return response
-    role = roleType
-    if(role!=None):
+    role = roleType()
+    print(role)
+    if (role != None):
         return redirect(url_for("Dashboard"))
     return render_template('Forms/Login.html')
 # endregion
@@ -103,7 +105,7 @@ def CreateTeacher():
 @app.route('/Teacher/Edit')
 def EditTeacher():
     role = roleType()
-    if(role=="teacher"):
+    if (role == "teacher"):
         SysId = request.args.get('SysId')
         teacher = TeacherBC(SysId=SysId)
         return render_template('Forms/Teacher.html', teacher=teacher.get_teachers(), status='Edit')
@@ -113,7 +115,7 @@ def EditTeacher():
 @app.route('/SubmitTeacher', methods=['POST'])
 def SubmitTeacher():
     role = roleType()
-    if(role=="teacher"):
+    if (role == "teacher"):
         if request.method == 'POST':
             if request.form.get('SysId') == 'None':
                 teacher_bc = TeacherBC()
@@ -122,13 +124,14 @@ def SubmitTeacher():
                 # print('Updating Valuesss',request.form.get('SysId'))
                 teacher_bc = TeacherBC(SysId=request.form.get('SysId'))
                 return jsonify(teacher_bc.update_teacher(new_data=dict(request.form)))
-        
+
     return jsonify({"Message": "Invalid Request"})
+
 
 @app.route('/Teacher/Delete')
 def DeleteTeacher():
     role = roleType()
-    if(role=="teacher"):
+    if (role == "teacher"):
         SysId = request.args.get('SysId')
         teacher = TeacherBC(SysId=SysId)
         return render_template('Forms/Teacher.html', teacher=teacher.get_teachers(), status='Delete')
@@ -138,14 +141,14 @@ def DeleteTeacher():
 @app.route('/Delete', methods=['POST'])
 def Delete():
     role = roleType()
-    if(role=="Teacher"):
+    if (role == "Teacher"):
         if request.method == 'POST':
             if request.form.get('SysId') == 'None':
                 return jsonify({"error": "No Teacher To Deelte"}, 500)
             else:
                 teacher_bc = TeacherBC(SysId=request.form.get('SysId'))
                 return jsonify(teacher_bc.delete_teacher())
-            
+
     return jsonify({"Message": "Invalid Request"})
 # endregion
 
