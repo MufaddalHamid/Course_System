@@ -9,5 +9,6 @@ class Subject_Basket(BaseDM):
     Subject_ID = Column(String(36), ForeignKey(Subject.SysId), nullable=False)
     Subject = relationship(Subject,backref=backref("Subject_Basket"))
     Category = relationship(Category, backref=backref("Category_Basket"))
+    Credit = Column(Integer(10),nullable = False)
     # Credit_per_Cat=Column(Integer(3),nullable=False)
     # Limit_per_Cat = Column(Integer(3),nullable=True)
