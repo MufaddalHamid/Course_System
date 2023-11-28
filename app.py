@@ -283,15 +283,19 @@ def SubjectLising():
 @app.route('/Subject/Create')
 def CreateSubject():
     # Add your logic for creating a book here
-    return render_template('Forms/Subject.html', subject=SubjectBC(None), teachers=TeacherBC(SysId=None).get_teachers(), status='Create')
-
+    role = roleType()
+    if (role == "teacher"):
+        return render_template('Forms/Subject.html', subject=SubjectBC(None), teachers=TeacherBC(SysId=None).get_teachers(), status='Create')
+    return redirect(url_for("Login"))
 
 @app.route('/Subject/Edit')
 def EditSubject():
     SysId = request.args.get('SysId')
     subject = SubjectBC(SysId=SysId)
-    return render_template('Forms/Subject.html', subject=subject.get_subjects(), teachers=TeacherBC(SysId=None).get_teachers(), status='Edit')
-
+    role = roleType()
+    if (role == "teacher"):
+        return render_template('Forms/Subject.html', subject=subject.get_subjects(), teachers=TeacherBC(SysId=None).get_teachers(), status='Edit')
+    return redirect(url_for("Login"))
 
 @app.route('/SubmitSubject', methods=['POST'])
 def SubmitSubject():
