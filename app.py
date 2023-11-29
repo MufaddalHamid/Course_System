@@ -56,10 +56,26 @@ def Login():
         ) + timedelta(days=2), secure=True, httponly=True, samesite='Strict')
         return response
     role = roleType()
-    print(role)
     if (role != None):
         return redirect(url_for("Dashboard"))
     return render_template('Forms/Login.html')
+# endregion
+
+
+# region Logout
+@app.route('/Logout')
+def Logout():
+    role = roleType()
+    if (role == None):
+        return redirect(url_for("Login"))
+    print("logout")
+    resp = make_response(redirect(url_for("Login")))
+    auth_token = None
+    # resp.delete_cookie('auth_token', auth_token, secure=True, httponly=True, samesite='Strict')
+    resp.delete_cookie('auth_token')
+    # print("check" + resp)
+    return resp
+
 # endregion
 
 # region Dashboards
@@ -308,6 +324,7 @@ def DeleteS():
         else:
             course_bc = SubjectBC(SysId=request.form.get('SysId'))
             return jsonify(course_bc.delete_subject())
+
 # endregion
 
 # region Student CRUD
